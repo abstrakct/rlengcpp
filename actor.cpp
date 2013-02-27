@@ -8,21 +8,21 @@
 using namespace std;
 #include "actor.h"
 
-actor::actor()
+Actor::Actor()
 {
         alive = true;
 }
 
-actor::~actor()
+Actor::~Actor()
 {
 }
 
-bool actor::is_player()
+bool Actor::is_player()
 {
         return false;
 }
 
-bool actor::is_alive()
+bool Actor::is_alive()
 {
         if(alive)
                 return true;
@@ -30,7 +30,7 @@ bool actor::is_alive()
                 return false;
 }
 
-void actor::kill()
+void Actor::kill()
 {
         alive = false;
 }

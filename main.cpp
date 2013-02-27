@@ -1,28 +1,27 @@
+/*
+ * Roguelike Engine in C++
+ */
+
 using namespace std;
 
 #include <iostream>
 
 #include "libtcod.hpp"
+
 #include "actor.h"
+#include "display.h"
+#include "game.h"
 
 
 int main()
 {
-        actor test;
+        Actor test;
+        Display d;
+        Game *game;
 
-        cout << "TEST" << endl;
-
-        if(test.is_alive())
-                cout << "test is alive!" << endl;
-        else
-                cout << "test is dead!" << endl;
-
-        test.kill();
-
-        if(test.is_alive())
-                cout << "test is alive!" << endl;
-        else
-                cout << "test is dead!" << endl;
+        game = new Game;
+        char c;
+        cin >> c;
 
         return 0;
 }

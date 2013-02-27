@@ -9,10 +9,10 @@
 #ifndef _ACTOR_H
 #define _ACTOR_H
 
-class actor {
+class Actor {
         public:
-                actor();
-                ~actor();
+                Actor();
+                ~Actor();
                 bool is_player();
                 bool is_alive();
                 void kill();
