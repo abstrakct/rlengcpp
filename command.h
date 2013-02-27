@@ -15,13 +15,14 @@ using namespace std;
 #include "libtcod.hpp"
 
 enum command_type {
-        cmd_exit = 0,
-        cmd_wait = 1
+        cmd_nothing = 0,
+        cmd_exit,
+        cmd_wait,
 };
 
 struct command_t {
-        command_type cmd;
         TCOD_keycode_t key;
+        command_type cmd;
 };
 
 class Command {
@@ -29,6 +30,7 @@ class Command {
                 Command();
                 ~Command();
                 void add_command(command_type cmd, TCOD_keycode_t key);
+                command_type get_command();
         private:
                 vector <struct command_t> command_list;
 };

@@ -14,7 +14,7 @@ using namespace std;
 #include "command.h"
 
 struct command_t command_set_normal[] = {
-        { cmd_exit, TCODK_ESCAPE }
+        { TCODK_ESCAPE, cmd_exit },
 };
 
 Command::Command()
@@ -33,6 +33,22 @@ void Command::add_command(command_type cmd, TCOD_keycode_t key)
         c.key = key;
 
         command_list.push_back(c);
+}
+
+command_type Command::get_command()
+{
+        command_type ret;
+        vector<struct command_t>::iterator i;
+
+        ret = cmd_nothing;
+
+        TCOD_key_t key = TCODConsole::waitForKeypress(true);
+        for(i = command_list.begin(); i != command_list.end(); ++i) {
+                if(key.vk == i->key)
+                        ret = i->cmd;
+        }
+
+        return ret;
 }
 
 void init_commands(Command *c)

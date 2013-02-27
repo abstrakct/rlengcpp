@@ -38,10 +38,13 @@ void Game::endgame()
 
 void Game::loop()
 {
+        command_type c;
+
         while (this->is_running()) {
                 display.update();
-                TCOD_key_t key = TCODConsole::waitForKeypress(true);
-                if(key.vk == TCODK_ESCAPE)
+
+                c = cmd.get_command();
+                if(c == cmd_exit)
                         endgame();
         }
 }
