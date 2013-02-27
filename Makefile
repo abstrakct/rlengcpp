@@ -1,8 +1,25 @@
-rleng: main.o actor.o
-	g++ -o rleng main.o actor.o
+CXX = g++ 
+CXXFLAGS = -Wall -g -ggdb3 -I. -Iinclude
+LIBS = -lm -ltcod -Llib -Wl,-rpath=lib
+LDFLAGS = $(LIBS)     #,-rpath=lib 
+DEFINES = 
+ 
+SOURCES = main.cpp actor.cpp
+HEADERS = actor.h
+OBJS    = main.o actor.o
 
-actor.o: actor.h actor.cpp
-	g++ -c actor.cpp
+rleng: $(OBJS)
+	$(CXX) $(DEFINES) $(LDFLAGS) -o $@ $(OBJS)
 
-main.o: actor.h actor.cpp main.cpp
-	g++ -c main.cpp
+.: $(SOURCES) $(HEADERS)
+	$(CXX) $(CXXFLAGS) $(DEFINES) -o $@ $(SOURCES)
+
+clean:
+	rm -f *.o rleng 
+
+depend:
+	$(CC) -MM *.cpp > .deps
+
+all: rleng
+
+include .deps

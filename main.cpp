@@ -1,6 +1,8 @@
 using namespace std;
 
 #include <iostream>
+
+#include "libtcod.hpp"
 #include "actor.h"
 
 
