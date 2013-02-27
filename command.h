@@ -22,6 +22,7 @@ enum command_type {
 
 struct command_t {
         TCOD_keycode_t key;
+        char c;
         command_type cmd;
 };
 
@@ -29,7 +30,7 @@ class Command {
         public:
                 Command();
                 ~Command();
-                void add_command(command_type cmd, TCOD_keycode_t key);
+                void add_command(TCOD_keycode_t key, char ch, command_type cmd);
                 command_type get_command();
         private:
                 vector <struct command_t> command_list;

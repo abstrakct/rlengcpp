@@ -12,9 +12,11 @@ using namespace std;
 
 #include "libtcod.hpp"
 #include "command.h"
+#include "debug.h"
 
 struct command_t command_set_normal[] = {
-        { TCODK_ESCAPE, cmd_exit },
+        { TCODK_ESCAPE, 0,  cmd_exit },
+        { TCODK_CHAR,  'q', cmd_exit },
 };
 
 Command::Command()
@@ -25,14 +27,16 @@ Command::~Command()
 {
 }
 
-void Command::add_command(command_type cmd, TCOD_keycode_t key)
+void Command::add_command(TCOD_keycode_t key, char ch, command_type cmd)
 {
         command_t c;
 
         c.cmd = cmd;
         c.key = key;
+        c.c = ch;
 
         command_list.push_back(c);
+        //dbg("added command %d char %c command_type %d", key, ch, cmd);
 }
 
 command_type Command::get_command()
@@ -44,8 +48,13 @@ command_type Command::get_command()
 
         TCOD_key_t key = TCODConsole::waitForKeypress(true);
         for(i = command_list.begin(); i != command_list.end(); ++i) {
-                if(key.vk == i->key)
-                        ret = i->cmd;
+                if(key.vk == TCODK_CHAR) {
+                        if(key.c == i->c)
+                                return i->cmd;
+                } else {
+                        if(key.vk == i->key)
+                                return i->cmd;
+                }
         }
 
         return ret;
@@ -57,6 +66,6 @@ void init_commands(Command *c)
 
         num = sizeof(command_set_normal) / sizeof(struct command_t);
         for(i = 0; i < num; i++)
-                c->add_command(command_set_normal[i].cmd, command_set_normal[i].key);
+                c->add_command(command_set_normal[i].key, command_set_normal[i].c, command_set_normal[i].cmd);
 
 }
