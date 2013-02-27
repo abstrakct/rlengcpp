@@ -14,11 +14,14 @@ class Display {
                 Display();
                 ~Display();
                 void set_resolution(int w, int h);
-                void start(char *window_title);
+                void set_title(char *window_title);
+                void start();
+                void update();
         protected:
         private:
                 int width, height;
-                
+                int chars_x, chars_y;
+                char title[256];
 };
 
 #endif

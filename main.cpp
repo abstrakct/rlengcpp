@@ -9,19 +9,21 @@ using namespace std;
 #include "libtcod.hpp"
 
 #include "actor.h"
+#include "command.h"
+#include "debug.h"
 #include "display.h"
 #include "game.h"
 
 
-int main()
+Game *game;
+
+int main(int argc, char **argv)
 {
-        Actor test;
-        Display d;
-        Game *game;
-
         game = new Game;
-        char c;
-        cin >> c;
 
+        dbg("Entering game loop.");
+        game->loop();
+        dbg("Exited game loop.");
+        
         return 0;
 }

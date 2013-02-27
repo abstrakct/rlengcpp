@@ -15,8 +15,10 @@ using namespace std;
 
 Display::Display()
 {
-        width = 1024;  // default resolution
-        height = 600;
+        char t[] = "Test";
+
+        set_resolution(1024, 600);
+        set_title(t);
 }
 
 Display::~Display()
@@ -28,10 +30,22 @@ void Display::set_resolution(int w, int h)
 {
         width = w;
         height = h;
+        chars_x = w / 8;
+        chars_y = h / 8;
 }
 
-void Display::start(char *window_title)
+void Display::set_title(char *window_title)
+{
+        strcpy(title, window_title);
+}
+
+void Display::start()
 {
         TCODConsole::setCustomFont("ds.png", TCOD_FONT_LAYOUT_ASCII_INROW, 16, 16);
-        TCODConsole::initRoot(width/8, height/8, window_title, false, TCOD_RENDERER_SDL);
+        TCODConsole::initRoot(chars_x, chars_y, title, false, TCOD_RENDERER_SDL);
+}
+
+void Display::update()
+{
+        TCODConsole::flush();
 }
