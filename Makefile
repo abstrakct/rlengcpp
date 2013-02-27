@@ -4,9 +4,9 @@ LIBS = -lm -ltcodxx -Llib -Wl,-rpath=lib
 LDFLAGS=$(LIBS)     #,-rpath=lib 
 DEFINES =
  
-SOURCES = main.cpp actor.cpp display.cpp game.cpp command.cpp debug.cpp
+SOURCES = main.cpp actor.cpp display.cpp game.cpp command.cpp
 HEADERS = actor.h display.h game.h command.h debug.h
-OBJS    = main.o actor.o display.o game.o command.o debug.o
+OBJS    = main.o actor.o display.o game.o command.o
 
 rleng: $(OBJS)
 	$(CXX) $(DEFINES) $(LDFLAGS) -o $@ $(OBJS)

@@ -11,6 +11,7 @@ using namespace std;
 
 #include "libtcod.hpp"
 
+#include "debug.h"
 #include "display.h"
 
 Display::Display()
@@ -32,6 +33,7 @@ void Display::set_resolution(int w, int h)
         height = h;
         chars_x = w / 8;
         chars_y = h / 8;
+        dbg("Set resolution to %d,%d", w, h);
 }
 
 void Display::set_title(char *window_title)

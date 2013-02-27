@@ -21,9 +21,7 @@ int main(int argc, char **argv)
 {
         game = new Game;
 
-        dbg("Entering game loop.");
         game->loop();
-        dbg("Exited game loop.");
         
         return 0;
 }
