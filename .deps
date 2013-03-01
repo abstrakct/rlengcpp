@@ -1,0 +1,57 @@
+actor.o: actor.cpp actor.h
+command.o: command.cpp include/libtcod.hpp include/libtcod.h \
+ include/list.h include/color.h include/console.h include/console_types.h \
+ include/image.h include/mouse.h include/mouse_types.h include/sys.h \
+ include/mersenne.h include/mersenne_types.h include/bresenham.h \
+ include/noise.h include/noise_defaults.h include/fov.h \
+ include/fov_types.h include/path.h include/lex.h include/parser.h \
+ include/tree.h include/bsp.h include/heightmap.h include/zip.h \
+ include/namegen.h include/txtfield.h include/list.hpp include/color.hpp \
+ include/console.hpp include/image.hpp include/sys.hpp \
+ include/mersenne.hpp include/mouse.hpp include/bresenham.hpp \
+ include/noise.hpp include/fov.hpp include/path.hpp include/lex.hpp \
+ include/parser.hpp include/tree.hpp include/bsp.hpp \
+ include/heightmap.hpp include/zip.hpp include/namegen.hpp \
+ include/txtfield.hpp command.h
+display.o: display.cpp include/libtcod.hpp include/libtcod.h \
+ include/list.h include/color.h include/console.h include/console_types.h \
+ include/image.h include/mouse.h include/mouse_types.h include/sys.h \
+ include/mersenne.h include/mersenne_types.h include/bresenham.h \
+ include/noise.h include/noise_defaults.h include/fov.h \
+ include/fov_types.h include/path.h include/lex.h include/parser.h \
+ include/tree.h include/bsp.h include/heightmap.h include/zip.h \
+ include/namegen.h include/txtfield.h include/list.hpp include/color.hpp \
+ include/console.hpp include/image.hpp include/sys.hpp \
+ include/mersenne.hpp include/mouse.hpp include/bresenham.hpp \
+ include/noise.hpp include/fov.hpp include/path.hpp include/lex.hpp \
+ include/parser.hpp include/tree.hpp include/bsp.hpp \
+ include/heightmap.hpp include/zip.hpp include/namegen.hpp \
+ include/txtfield.hpp display.h
+game.o: game.cpp include/libtcod.hpp include/libtcod.h include/list.h \
+ include/color.h include/console.h include/console_types.h \
+ include/image.h include/mouse.h include/mouse_types.h include/sys.h \
+ include/mersenne.h include/mersenne_types.h include/bresenham.h \
+ include/noise.h include/noise_defaults.h include/fov.h \
+ include/fov_types.h include/path.h include/lex.h include/parser.h \
+ include/tree.h include/bsp.h include/heightmap.h include/zip.h \
+ include/namegen.h include/txtfield.h include/list.hpp include/color.hpp \
+ include/console.hpp include/image.hpp include/sys.hpp \
+ include/mersenne.hpp include/mouse.hpp include/bresenham.hpp \
+ include/noise.hpp include/fov.hpp include/path.hpp include/lex.hpp \
+ include/parser.hpp include/tree.hpp include/bsp.hpp \
+ include/heightmap.hpp include/zip.hpp include/namegen.hpp \
+ include/txtfield.hpp actor.h display.h game.h
+main.o: main.cpp include/libtcod.hpp include/libtcod.h include/list.h \
+ include/color.h include/console.h include/console_types.h \
+ include/image.h include/mouse.h include/mouse_types.h include/sys.h \
+ include/mersenne.h include/mersenne_types.h include/bresenham.h \
+ include/noise.h include/noise_defaults.h include/fov.h \
+ include/fov_types.h include/path.h include/lex.h include/parser.h \
+ include/tree.h include/bsp.h include/heightmap.h include/zip.h \
+ include/namegen.h include/txtfield.h include/list.hpp include/color.hpp \
+ include/console.hpp include/image.hpp include/sys.hpp \
+ include/mersenne.hpp include/mouse.hpp include/bresenham.hpp \
+ include/noise.hpp include/fov.hpp include/path.hpp include/lex.hpp \
+ include/parser.hpp include/tree.hpp include/bsp.hpp \
+ include/heightmap.hpp include/zip.hpp include/namegen.hpp \
+ include/txtfield.hpp actor.h display.h game.h
