@@ -20,11 +20,16 @@ Display::Display()
 
         set_resolution(1024, 600);
         set_title(t);
+
+        TCODConsole::initRoot(chars_x, chars_y, title, false, TCOD_RENDERER_SDL);
+        TCODConsole::setCustomFont("ds.png", TCOD_FONT_LAYOUT_ASCII_INROW, 16, 16);
+        console = new TCODConsole(chars_x, chars_y);
+        console->setCustomFont("ds.png", TCOD_FONT_LAYOUT_ASCII_INROW, 16, 16);
 }
 
 Display::~Display()
 {
-
+        delete console;
 }
 
 void Display::set_resolution(int w, int h)
@@ -41,13 +46,18 @@ void Display::set_title(char *window_title)
         strcpy(title, window_title);
 }
 
-void Display::start()
+char *Display::get_title()
 {
-        TCODConsole::setCustomFont("ds.png", TCOD_FONT_LAYOUT_ASCII_INROW, 16, 16);
-        TCODConsole::initRoot(chars_x, chars_y, title, false, TCOD_RENDERER_SDL);
+        return title;
 }
 
 void Display::update()
 {
+        TCODConsole::blit(console, 0, 0, chars_x, chars_y, TCODConsole::root, 0, 0);
         TCODConsole::flush();
+}
+
+void Display::put(int x, int y, int c, TCOD_bkgnd_flag_t flag)
+{
+        console->putChar(x, y, c, flag);
 }

@@ -17,9 +17,11 @@ using namespace std;
 
 Game::Game()
 {
-       display.start(); 
-       init_commands(&this->cmd);
-       running = true;
+        display = new Display;
+
+        init_commands(&this->cmd);
+
+        running = true;
 }
 
 Game::~Game()
@@ -40,11 +42,22 @@ void Game::loop()
 {
         command_type c;
 
+        //console.print(10, 10, "Welcome to game!!");
+
         while (this->is_running()) {
-                display.update();
+                display->put(10, 10, '@');
+                display->update();
 
                 c = cmd.get_command();
-                if(c == cmd_exit)
-                        endgame();
+                switch(c) {
+                        case cmd_exit:
+                                endgame();
+                        default:
+                                break;
+                }
         }
+}
+
+void Game::intro()
+{
 }

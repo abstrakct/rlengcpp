@@ -19,11 +19,14 @@ class Game {
                 void loop();
                 bool is_running();
                 void endgame();
+                void intro();
+
         protected:
         private:
-                Display display;
-                bool running;
                 Command cmd;
+                Display *display;
+
+                bool running;
 };
 
 #endif
