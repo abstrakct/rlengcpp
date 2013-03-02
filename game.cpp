@@ -14,6 +14,10 @@ using namespace std;
 #include "debug.h"
 #include "display.h"
 #include "game.h"
+#include "player.h"
+
+extern Display *display;
+extern Player *player;
 
 Game::Game()
 {
@@ -45,7 +49,7 @@ void Game::loop()
         //console.print(10, 10, "Welcome to game!!");
 
         while (this->is_running()) {
-                display->put(10, 10, '@');
+                player->draw();
                 display->update();
 
                 c = cmd.get_command();

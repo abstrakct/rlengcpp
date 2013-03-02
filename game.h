@@ -20,12 +20,9 @@ class Game {
                 bool is_running();
                 void endgame();
                 void intro();
-
         protected:
         private:
                 Command cmd;
-                Display *display;
-
                 bool running;
 };
 

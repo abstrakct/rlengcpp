@@ -16,7 +16,7 @@
 
 // the following was stolen from http://stackoverflow.com/questions/4248372/custom-debug-printf-used-at-runtime
 #ifdef DEBUG_MODE
-#define dbg(fmt, ...) printf(("DEBUG: [%s:%d] %s: " fmt "\n"), __FILE__, __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__);
+#define dbg(fmt, ...) printf(("  DEBUG: [%s:%d] %s: " fmt "\n"), __FILE__, __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__);
 #else
 #define dbg(...)
 #endif

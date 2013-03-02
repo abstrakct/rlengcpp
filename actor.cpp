@@ -6,10 +6,15 @@
  */
 
 using namespace std;
+#include "common.h"
 #include "actor.h"
+
 
 Actor::Actor()
 {
+        role = role_unknown;
+        c = ' ';
+        co.x = co.y = 0;
         alive = true;
 }
 
@@ -17,10 +22,13 @@ Actor::~Actor()
 {
 }
 
-bool Actor::is_player()
+/*bool Actor::is_player()
 {
-        return false;
-}
+        if(role == player)
+                return true;
+        else
+                return false;
+}*/
 
 bool Actor::is_alive()
 {
@@ -33,4 +41,20 @@ bool Actor::is_alive()
 void Actor::kill()
 {
         alive = false;
+}
+
+void Actor::setxy(int x, int y)
+{
+        this->co.x = x;
+        this->co.y = y;
+}
+
+void Actor::setchar(char newc)
+{
+        c = newc;
+}
+
+void Actor::draw()
+{
+        display->put(this->co.x, this->co.y, this->c);
 }
