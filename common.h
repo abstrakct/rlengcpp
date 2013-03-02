@@ -1,5 +1,4 @@
 /*
- *
  * Common stuff
  *
  * Copyright (C) 2013
@@ -21,3 +20,4 @@ typedef struct {
 
 #endif
 
+// vim: fdm=syntax guifont=Terminus\ 8

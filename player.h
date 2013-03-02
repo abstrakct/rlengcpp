@@ -1,5 +1,4 @@
 /*
- *
  * Player specific stuff
  *
  * Copyright (C) 2013
@@ -22,3 +21,4 @@ class Player: public Actor {
 };
 
 #endif
+// vim: fdm=syntax guifont=Terminus\ 8

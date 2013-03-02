@@ -61,3 +61,4 @@ void Display::put(int x, int y, int c, TCOD_bkgnd_flag_t flag)
 {
         console->putChar(x, y, c, flag);
 }
+// vim: fdm=syntax guifont=Terminus\ 8

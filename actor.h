@@ -1,5 +1,4 @@
 /*
- *
  * Generic actor class definition
  *
  * Copyright (C) 2013
@@ -37,3 +36,4 @@ class Actor {
 };
 
 #endif
+// vim: fdm=syntax guifont=Terminus\ 8

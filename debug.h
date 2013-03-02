@@ -1,5 +1,4 @@
 /*
- *
  * Debugging
  *
  * Copyright (C) 2013
@@ -23,3 +22,4 @@
 
 #endif
 
+// vim: fdm=syntax guifont=Terminus\ 8

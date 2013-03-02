@@ -1,5 +1,4 @@
 /*
- *
  * The Game
  *
  * Copyright (C) 2013
@@ -28,3 +27,4 @@ class Game {
 
 #endif
 
+// vim: fdm=syntax guifont=Terminus\ 8

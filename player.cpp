@@ -1,7 +1,7 @@
 /*
  * Roguelike Engine in C++
  *
- * The Game (loop etc.)
+ * Player specific stuff.
  *
  */
 
@@ -24,3 +24,4 @@ Player::~Player()
 {
         dbg("Goodbye, cruel world.");
 }
+// vim: fdm=syntax guifont=Terminus\ 8

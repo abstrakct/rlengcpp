@@ -42,3 +42,4 @@ void init_commands(Command *c);
 
 #endif
 
+// vim: fdm=syntax guifont=Terminus\ 8

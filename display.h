@@ -1,5 +1,4 @@
 /*
- *
  * Display handling etc.
  *
  * Copyright (C) 2013
@@ -30,3 +29,4 @@ class Display {
 
 #endif
 
+// vim: fdm=syntax guifont=Terminus\ 8

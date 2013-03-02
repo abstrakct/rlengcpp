@@ -65,3 +65,4 @@ void Game::loop()
 void Game::intro()
 {
 }
+// vim: fdm=syntax guifont=Terminus\ 8

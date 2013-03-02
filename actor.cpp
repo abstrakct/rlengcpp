@@ -1,5 +1,4 @@
 /*
- *
  * Generic actor class definition
  *
  * Copyright (C) 2013
@@ -58,3 +57,4 @@ void Actor::draw()
 {
         display->put(this->co.x, this->co.y, this->c);
 }
+// vim: fdm=syntax guifont=Terminus\ 8

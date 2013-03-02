@@ -68,3 +68,4 @@ void init_commands(Command *c)
                 c->add_command(command_set_normal[i].key, command_set_normal[i].cmd);
 
 }
+// vim: fdm=syntax guifont=Terminus\ 8
