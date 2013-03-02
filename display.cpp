@@ -22,9 +22,9 @@ Display::Display()
         set_title(t);
 
         TCODConsole::initRoot(chars_x, chars_y, title, false, TCOD_RENDERER_SDL);
-        TCODConsole::setCustomFont("ds.png", TCOD_FONT_LAYOUT_ASCII_INROW, 16, 16);
+        TCODConsole::setCustomFont("terminal8x14_gs_ro.png", TCOD_FONT_TYPE_GRAYSCALE | TCOD_FONT_LAYOUT_ASCII_INROW, 16, 16);
         console = new TCODConsole(chars_x, chars_y);
-        console->setCustomFont("ds.png", TCOD_FONT_LAYOUT_ASCII_INROW, 16, 16);
+        console->setCustomFont("terminal8x14_gs_ro.png", TCOD_FONT_TYPE_GRAYSCALE | TCOD_FONT_LAYOUT_ASCII_INROW, 16, 16);
 }
 
 Display::~Display()

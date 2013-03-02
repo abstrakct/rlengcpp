@@ -44,8 +44,13 @@ void Actor::kill()
 
 void Actor::setxy(int x, int y)
 {
-        this->co.x = x;
-        this->co.y = y;
+        co.x = x;
+        co.y = y;
+}
+
+void Actor::setxy(coord_t newco)
+{
+        co = newco;
 }
 
 void Actor::setchar(char newc)

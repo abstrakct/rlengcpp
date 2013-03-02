@@ -26,6 +26,7 @@ class Actor {
                 void kill();
                 void draw();
                 void setxy(int x, int y);
+                void setxy(coord_t newco);
                 void setchar(char newc);
         protected:
         private:
