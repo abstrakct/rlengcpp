@@ -18,9 +18,9 @@ Actor::Actor()
         alive = true;
 }
 
-Actor::~Actor()
+/*Actor::~Actor()
 {
-}
+}*/
 
 /*bool Actor::is_player()
 {

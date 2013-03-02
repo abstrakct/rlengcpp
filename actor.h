@@ -21,7 +21,7 @@ enum e_role {
 class Actor {
         public:
                 Actor();
-                ~Actor();
+                virtual ~Actor() { dbg("This is the end...."); };
                 virtual bool is_player() = 0;
                 bool is_alive();
                 void kill();
