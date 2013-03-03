@@ -16,6 +16,14 @@ using namespace std;
 
 enum command_type {
         cmd_nothing = 0,
+        cmd_move_left,
+        cmd_move_right,
+        cmd_move_up,
+        cmd_move_down,
+        cmd_move_nw,
+        cmd_move_ne,
+        cmd_move_sw,
+        cmd_move_se,
         cmd_exit,
         cmd_wait,
 };
