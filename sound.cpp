@@ -16,6 +16,11 @@ using namespace std;
 #include "common.h"
 #include "sound.h"
 
+struct sound_def sound_defs[NUM_SOUNDS] = {
+        { 0, "test.wav"},
+        { 1, "test.wav"},
+};
+        
 SoundEngine::SoundEngine()
 {
         audio_rate = 44100;
@@ -38,6 +43,14 @@ void SoundEngine::load_file(const char *filename)
         }
 
         sounds_count++;
+}
+
+void SoundEngine::load_all_files()
+{
+        int i;
+        for(i = 0; i < NUM_SOUNDS; i++) {
+                load_file(sound_defs[i].filename);
+        }
 }
 
 void SoundEngine::play_sound(int sound)

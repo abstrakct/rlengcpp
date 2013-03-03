@@ -11,12 +11,12 @@
 #include "SDL/SDL.h"
 #include "SDL/SDL_mixer.h"
 
-#define SOUND_X 0
-#define SOUND_X_FILENAME "asdf.wav"
-#define SOUND_Y 1
-#define SOUND_Y_FILENAME "asdf.wav"
+struct sound_def {
+       int num;
+       char filename[256];
+};
 
-#define NUM_SOUNDS 32
+#define NUM_SOUNDS 2
 
 class SoundEngine {
         public:
@@ -24,6 +24,7 @@ class SoundEngine {
                 ~SoundEngine();
                 int initialize();
                 void load_file(const char *filename);
+                void load_all_files();
                 void play_sound(int sound);
                 void play_sound(int sound, int ms);       // play sound, fade in ms milliseconds.
                 void play_sound_infinite_loop(int sound);

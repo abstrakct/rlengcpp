@@ -29,9 +29,7 @@ int main(int argc, char **argv)
         audio = new SoundEngine;
 
         audio->initialize();
-        audio->load_file("sound/120400__adamlhumphreys__storm01.wav");
-        audio->load_file("sound/41134__gbsweetie__rain-01.wav");
-
+        //audio->load_all_files();
 
         game->loop();
         
