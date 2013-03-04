@@ -15,7 +15,6 @@ class Player: public Actor {
                 Player();
                 ~Player();
                 bool is_player() { return true; }
-        
         private:
                 int health;
 };

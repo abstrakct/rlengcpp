@@ -28,6 +28,10 @@ class Actor {
                 void setxy(int x, int y);
                 void setxy(coord_t newco);
                 void setchar(char newc);
+                void move_left();
+                void move_right();
+                void move_up();
+                void move_down();
         protected:
         private:
                 e_role role;

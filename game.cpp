@@ -56,6 +56,19 @@ void Game::loop()
                 switch(c) {
                         case cmd_exit:
                                 endgame();
+                                break;
+                        case cmd_move_left:
+                                player->move_left();
+                                break;
+                        case cmd_move_right:
+                                player->move_right();
+                                break;
+                        case cmd_move_up:
+                                player->move_up();
+                                break;
+                        case cmd_move_down:
+                                player->move_down();
+                                break;
                         default:
                                 break;
                 }

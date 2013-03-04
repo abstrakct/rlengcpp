@@ -17,6 +17,10 @@ using namespace std;
 command_t command_set_normal[] = {
         { { TCODK_ESCAPE, 0,  1, 0, 0, 0, 0, 0 }, cmd_exit },
         { { TCODK_CHAR,  'q', 1, 0, 0, 0, 0, 0 }, cmd_exit },
+        { { TCODK_CHAR,  'j', 1, 0, 0, 0, 0, 0 }, cmd_move_down },
+        { { TCODK_CHAR,  'k', 1, 0, 0, 0, 0, 0 }, cmd_move_up },
+        { { TCODK_CHAR,  'h', 1, 0, 0, 0, 0, 0 }, cmd_move_left },
+        { { TCODK_CHAR,  'l', 1, 0, 0, 0, 0, 0 }, cmd_move_right },
 };
 
 Command::Command()

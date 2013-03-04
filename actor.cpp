@@ -62,4 +62,26 @@ void Actor::draw()
 {
         display->put(this->co.x, this->co.y, this->c);
 }
+
+void Actor::move_left()
+{
+        co.x -= 1;
+}
+
+void Actor::move_right()
+{
+        co.x += 1;
+}
+
+void Actor::move_down()
+{
+        co.y += 1;
+}
+
+void Actor::move_up()
+{
+        co.y -= 1;
+}
+
+
 // vim: fdm=syntax guifont=Terminus\ 8
