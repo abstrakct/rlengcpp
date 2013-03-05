@@ -12,6 +12,7 @@ using namespace std;
 
 #include "libtcod.hpp"
 #include "command.h"
+#include "common.h"
 #include "debug.h"
 
 command_t command_set_normal[] = {
@@ -43,7 +44,7 @@ void Command::add_command(TCOD_key_t key, command_type cmd)
         c.key = key;
 
         command_list.push_back(c);
-        //dbg("added command %d char %c command_type %d", key, ch, cmd);
+        //dbg("added command %d char %c command_type %d", c.cmd, key.c, cmd);
 }
 
 command_type Command::get_command()
@@ -53,7 +54,8 @@ command_type Command::get_command()
 
         ret = cmd_nothing;
 
-        TCOD_key_t key = TCODConsole::waitForKeypress(true);
+        TCOD_key_t key = display->get_key(true);
+
         for(i = command_list.begin(); i != command_list.end(); ++i) {
                 if(key.vk == TCODK_CHAR) {
                         if(key.c == i->key.c)

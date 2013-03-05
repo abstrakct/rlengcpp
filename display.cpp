@@ -25,6 +25,7 @@ Display::Display()
         TCODConsole::setCustomFont("terminal8x14_gs_ro.png", TCOD_FONT_TYPE_GRAYSCALE | TCOD_FONT_LAYOUT_ASCII_INROW, 16, 16);
         console = new TCODConsole(chars_x, chars_y);
         console->setCustomFont("terminal8x14_gs_ro.png", TCOD_FONT_TYPE_GRAYSCALE | TCOD_FONT_LAYOUT_ASCII_INROW, 16, 16);
+        console->setKeyboardRepeat(350, 70);
 }
 
 Display::~Display()
@@ -44,6 +45,12 @@ void Display::set_resolution(int w, int h)
 void Display::set_title(char *window_title)
 {
         strcpy(title, window_title);
+}
+
+TCOD_key_t Display::get_key(bool flush)
+{
+        console->flush();
+        return console->checkForKeypress(TCOD_KEY_PRESSED);
 }
 
 char *Display::get_title()

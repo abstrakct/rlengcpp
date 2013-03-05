@@ -19,6 +19,7 @@ class Display {
                 char *get_title();
                 void update();
                 void put(int x, int y, int c, TCOD_bkgnd_flag_t flag = TCOD_BKGND_DEFAULT);
+                TCOD_key_t get_key(bool flush);
         protected:
         private:
                 int width, height;
