@@ -83,5 +83,29 @@ void Actor::move_up()
         co.y -= 1;
 }
 
+void Actor::move_nw()
+{
+        co.x -= 1;
+        co.y -= 1;
+}
+
+void Actor::move_ne()
+{
+        co.x += 1;
+        co.y -= 1;
+}
+
+void Actor::move_sw()
+{
+        co.x -= 1;
+        co.y += 1;
+}
+
+void Actor::move_se()
+{
+        co.x += 1;
+        co.y += 1;
+}
+
 
 // vim: fdm=syntax guifont=Terminus\ 8

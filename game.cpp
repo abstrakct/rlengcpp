@@ -69,6 +69,18 @@ void Game::loop()
                         case cmd_move_down:
                                 player->move_down();
                                 break;
+                        case cmd_move_nw:
+                                player->move_nw();
+                                break;
+                        case cmd_move_ne:
+                                player->move_ne();
+                                break;
+                        case cmd_move_sw:
+                                player->move_sw();
+                                break;
+                        case cmd_move_se:
+                                player->move_se();
+                                break;
                         default:
                                 break;
                 }

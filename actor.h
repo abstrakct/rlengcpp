@@ -32,6 +32,10 @@ class Actor {
                 void move_right();
                 void move_up();
                 void move_down();
+                void move_nw();
+                void move_ne();
+                void move_sw();
+                void move_se();
         protected:
         private:
                 e_role role;

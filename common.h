@@ -18,6 +18,18 @@ typedef struct {
         int y;
 } coord_t;
 
+enum direction {
+        none = 0,
+        north,
+        south,
+        west,
+        east,
+        ne,
+        nw,
+        se,
+        sw
+};
+
 #endif
 
 // vim: fdm=syntax guifont=Terminus\ 8
