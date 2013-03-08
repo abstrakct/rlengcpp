@@ -42,6 +42,10 @@ void Game::endgame()
         running = false;
 }
 
+void Game::intro()
+{
+}
+
 void Game::loop()
 {
         command_type c;
@@ -87,7 +91,4 @@ void Game::loop()
         }
 }
 
-void Game::intro()
-{
-}
 // vim: fdm=syntax guifont=Terminus\ 8

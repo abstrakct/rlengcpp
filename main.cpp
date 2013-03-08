@@ -15,17 +15,29 @@ using namespace std;
 #include "display.h"
 #include "game.h"
 #include "player.h"
+#include "npc.h"
 #include "sound.h"
+#include "world.h"
 
 Game *game;
 Display *display;
 Player *player;
+NPC *npc;
 SoundEngine *audio;
+
+void clean_up()
+{
+        delete audio;
+        delete npc;
+        delete player;
+        delete game;
+}
 
 int main(int argc, char **argv)
 {
         game = new Game;
         player = new Player;
+        npc = new NPC;
         audio = new SoundEngine;
 
         audio->initialize();
@@ -33,10 +45,7 @@ int main(int argc, char **argv)
 
         game->loop();
         
-        delete audio;
-        delete player;
-        delete game;
-
+        clean_up();
         return 0;
 }
 
