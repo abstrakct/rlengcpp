@@ -65,7 +65,8 @@ void Actor::draw()
 
 void Actor::move_left()
 {
-        co.x -= 1;
+        if(world->is_passable(this->co.x - 1, this->co.y))
+                co.x -= 1;
 }
 
 void Actor::move_right()

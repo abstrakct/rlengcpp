@@ -17,7 +17,7 @@ NPC::NPC()
 {
         health = 0;
         setchar('@');
-        setxy(10, 10);
+        setxy(20, 30);
 }
 
 NPC::~NPC()

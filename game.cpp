@@ -15,9 +15,11 @@ using namespace std;
 #include "display.h"
 #include "game.h"
 #include "player.h"
+#include "npc.h"
 
 extern Display *display;
 extern Player *player;
+extern NPC *npc;
 
 Game::Game()
 {
@@ -53,6 +55,7 @@ void Game::loop()
         //console.print(10, 10, "Welcome to game!!");
 
         while (this->is_running()) {
+                npc->draw();
                 player->draw();
                 display->update();
 

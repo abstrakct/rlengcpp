@@ -23,6 +23,7 @@ Game *game;
 Display *display;
 Player *player;
 NPC *npc;
+World *world;
 SoundEngine *audio;
 
 void clean_up()
@@ -31,6 +32,7 @@ void clean_up()
         delete npc;
         delete player;
         delete game;
+        delete world;
 }
 
 int main(int argc, char **argv)
@@ -39,6 +41,7 @@ int main(int argc, char **argv)
         player = new Player;
         npc = new NPC;
         audio = new SoundEngine;
+        world = new World;
 
         audio->initialize();
         //audio->load_all_files();
