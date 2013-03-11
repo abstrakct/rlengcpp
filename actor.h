@@ -42,6 +42,7 @@ class Actor {
                 bool alive;
                 char c;
                 coord_t co;
+                coord_t prev;
 };
 
 #endif

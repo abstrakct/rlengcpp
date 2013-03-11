@@ -17,7 +17,7 @@ Player::Player()
 {
         health = 0;
         setchar('@');
-        setxy(10, 10);
+        setxy(45, 30);
 }
 
 Player::~Player()

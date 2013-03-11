@@ -14,7 +14,7 @@ using namespace std;
 
 Cell::Cell()
 {
-        type = nothing;
+        type = floor;
         flags = 0;
         bg = TCODColor::black;
         fg = TCODColor::white;

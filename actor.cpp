@@ -60,13 +60,15 @@ void Actor::setchar(char newc)
 
 void Actor::draw()
 {
-        display->put(this->co.x, this->co.y, this->c);
+        display->putmap(this->co.x, this->co.y, this->c);
 }
 
 void Actor::move_left()
 {
-        if(world->is_passable(this->co.x - 1, this->co.y))
+        if(world->is_passable(this->co.x - 1, this->co.y)) {
+                prev.x = co.x;
                 co.x -= 1;
+        }
 }
 
 void Actor::move_right()

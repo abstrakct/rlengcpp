@@ -55,7 +55,6 @@ void Game::loop()
         //console.print(10, 10, "Welcome to game!!");
 
         while (this->is_running()) {
-                npc->draw();
                 player->draw();
                 display->update();
 

@@ -22,9 +22,22 @@ Display::Display()
 
         TCODConsole::initRoot(chars_x, chars_y, title, false, TCOD_RENDERER_SDL);
         TCODConsole::setCustomFont("terminal8x14_gs_ro.png", TCOD_FONT_TYPE_GRAYSCALE | TCOD_FONT_LAYOUT_ASCII_INROW, 16, 16);
+
         console = new TCODConsole(chars_x, chars_y);
         console->setCustomFont("terminal8x14_gs_ro.png", TCOD_FONT_TYPE_GRAYSCALE | TCOD_FONT_LAYOUT_ASCII_INROW, 16, 16);
         console->setKeyboardRepeat(350, 70);
+
+        map = new TCODConsole(MAP_W, MAP_H);
+        map->setCustomFont("terminal8x14_gs_ro.png", TCOD_FONT_TYPE_GRAYSCALE | TCOD_FONT_LAYOUT_ASCII_INROW, 16, 16);
+        map->setKeyboardRepeat(350, 70);
+
+        left = new TCODConsole(LEFT_W, LEFT_H);
+        left->setCustomFont("terminal8x14_gs_ro.png", TCOD_FONT_TYPE_GRAYSCALE | TCOD_FONT_LAYOUT_ASCII_INROW, 16, 16);
+        left->setKeyboardRepeat(350, 70);
+
+        bottom = new TCODConsole(BOTTOM_W, BOTTOM_H);
+        bottom->setCustomFont("terminal8x14_gs_ro.png", TCOD_FONT_TYPE_GRAYSCALE | TCOD_FONT_LAYOUT_ASCII_INROW, 16, 16);
+        bottom->setKeyboardRepeat(350, 70);
 }
 
 Display::~Display()
@@ -38,7 +51,7 @@ void Display::set_resolution(int w, int h)
         height = h;
         chars_x = w / 8;
         chars_y = h / 8;
-        dbg("Set resolution to %d,%d", w, h);
+        dbg("Set resolution to %d,%d - chars x,y = %d,%d", w, h, chars_x, chars_y);
 }
 
 void Display::set_title(char *window_title)
@@ -57,14 +70,33 @@ char *Display::get_title()
         return title;
 }
 
+void Display::draw_game_screen()
+{
+        left->printFrame(LEFT_X, LEFT_Y, LEFT_W, LEFT_H, true);
+        map->printFrame(0, 0, MAP_W, MAP_H, false);
+        bottom->printFrame(0, 0, BOTTOM_W, BOTTOM_H, true);
+
+}
+
 void Display::update()
 {
-        TCODConsole::blit(console, 0, 0, chars_x, chars_y, TCODConsole::root, 0, 0);
+        this->draw_game_screen();
+
+        TCODConsole::blit(left, 0, 0, LEFT_W, LEFT_H, console, LEFT_X, LEFT_Y, 0.2, 0.2);
+        TCODConsole::blit(map, 0, 0, MAP_W, MAP_H, console, MAP_X, MAP_Y, 0.2, 0.2);
+        TCODConsole::blit(bottom, 0, 0, BOTTOM_W, BOTTOM_H, console, BOTTOM_X, BOTTOM_Y, 0.2, 0.2);
+        TCODConsole::blit(console, 0, 0, chars_x, chars_y, TCODConsole::root, 0.1, 0.1);
+        
         TCODConsole::flush();
 }
 
 void Display::put(int x, int y, int c, TCOD_bkgnd_flag_t flag)
 {
         console->putChar(x, y, c, flag);
+}
+
+void Display::putmap(int x, int y, int c, TCOD_bkgnd_flag_t flag)
+{
+        map->putChar(x, y, c, flag);
 }
 // vim: fdm=syntax guifont=Terminus\ 8
